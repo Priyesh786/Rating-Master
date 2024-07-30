@@ -10,6 +10,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
     <title>Star Rating</title>
 </head>
 
@@ -25,8 +29,51 @@
             <div class="content-head">
                 Rate Your Content
             </div>
+            <div class="picture">
+                <img src="https://th.bing.com/th/id/OIP.bOLzAF2MORWFX11yX4XYiwHaE8?w=256&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="none">
+                <div id=0 onclick="colorupto()">
+                  <div class="rate"> Rate among 5</div>
+                  <div class="rating">
+                    <span class="star" id=1 onclick="colorupto()">★</span>
+                    <span class="star" id=2 onclick="colorupto()">★</span>
+                    <span class="star" id=3 onclick="colorupto()">★</span>
+                    <span class="star" id=4 onclick="colorupto()">★</span>
+                    <span class="star" id=5 onclick="colorupto()">★</span>
+                  </div>
+                  <div id="remark"></div>
+                  <div class="link">
+                    <a href="#"><button class="button">Submit</button></a>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-
+<script >
+    function colorupto() {
+    const id = event.target.id;
+    const starElements=document.querySelectorAll('.star');
+    starElements.forEach((star)=>{
+        if(star.id<=id) {
+            star.classList.add('gold');
+        }
+        else {
+            star.classList.remove('gold')
+        }
+    })
+    switch(id){
+        case "1": document.getElementById('remark').textContent = "Very Bad";
+                 break;
+        case "2": document.getElementById('remark').textContent = "Bad";
+                 break;
+        case "3": document.getElementById('remark').textContent = "Average";
+                 break;
+        case "4": document.getElementById('remark').textContent = "Good";
+                 break;
+        case "5": document.getElementById('remark').textContent = "Very Good";
+                 break;
+        default : document.getElementById('remark').textContent = "";
+    }
+}
+</script>
 </html>
