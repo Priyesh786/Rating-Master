@@ -4,4 +4,4 @@ The component should support properties for the number of stars, rating value, a
 
 On run of table
 
-![Table](Assets/Rating Master-ss.png)
+![Table](Assets/ss.png)
